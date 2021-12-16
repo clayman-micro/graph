@@ -11,12 +11,13 @@ packages = [{ include = "graph", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+aio-pika = "6.8.0"
 fastapi = "0.70.0"
-uvicorn = {extras = ["standard"], version = "0.16.0"}
-strawberry-graphql = {version = "0.93.3", extras = ["fastapi"]}
 starlette-prometheus = "0.8.0"
+strawberry-graphql = {version = "0.93.3", extras = ["fastapi"]}
 structlog = "21.5.0"
 ujson = "4.3.0"
+uvicorn = {extras = ["standard"], version = "0.16.0"}
 
 [tool.poetry.dev-dependencies]
 black = "^19.10b0"
