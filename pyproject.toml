@@ -12,6 +12,7 @@ packages = [{ include = "graph", from = "src" }]
 [tool.poetry.dependencies]
 python = "^3.10"
 aio-pika = "6.8.0"
+aiojobs = "1.0.0"
 fastapi = "0.70.0"
 starlette-prometheus = "0.8.0"
 strawberry-graphql = {version = "0.93.3", extras = ["fastapi"]}

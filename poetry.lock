@@ -14,6 +14,20 @@ yarl = "*"
 develop = ["aiomisc (>=10.1.6,<10.2.0)", "async-generator", "coverage (!=4.3)", "coveralls", "pylava", "pytest", "pytest-cov", "shortuuid", "nox", "sphinx", "sphinx-autobuild", "timeout-decorator", "tox (>=2.4)"]
 
 [[package]]
+name = "aiojobs"
+version = "1.0.0"
+description = "Jobs scheduler for managing background task (asyncio)."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+async-timeout = ">=4.0.0"
+
+[package.extras]
+aiohttp = ["aiohttp (>=3.8.0)"]
+
+[[package]]
 name = "aiormq"
 version = "3.3.1"
 description = "Pure python AMQP asynchronous client library"
@@ -85,6 +99,17 @@ six = "*"
 
 [package.extras]
 test = ["astroid", "pytest"]
+
+[[package]]
+name = "async-timeout"
+version = "4.0.1"
+description = "Timeout context manager for asyncio programs"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+typing-extensions = ">=3.6.5"
 
 [[package]]
 name = "atomicwrites"
@@ -931,12 +956,16 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "6ef64e82d0f4b26b4f6c3334a5d8aa38205c719eb610e46c4516c2b2ada80ebd"
+content-hash = "f22eb4dd8b855747cf47f11798e9219b9249024add535f39511a97e955112bb0"
 
 [metadata.files]
 aio-pika = [
     {file = "aio-pika-6.8.0.tar.gz", hash = "sha256:1d4305a5f78af3857310b4fe48348cdcf6c097e0e275ea88c2cd08570531a369"},
     {file = "aio_pika-6.8.0-py3-none-any.whl", hash = "sha256:e69afef8695f47c5d107bbdba21bdb845d5c249acb3be53ef5c2d497b02657c0"},
+]
+aiojobs = [
+    {file = "aiojobs-1.0.0-py3-none-any.whl", hash = "sha256:86bd70777df7c8140be9bc597181d4db0d88a6449f4e4578169f98b6df24e805"},
+    {file = "aiojobs-1.0.0.tar.gz", hash = "sha256:5097580bb73d838e3f80e49d6a81d8e5f1dfc22fc6e75a44383cb2164daea8ea"},
 ]
 aiormq = [
     {file = "aiormq-3.3.1-py3-none-any.whl", hash = "sha256:e584dac13a242589aaf42470fd3006cb0dc5aed6506cbd20357c7ec8bbe4a89e"},
@@ -961,6 +990,10 @@ asgiref = [
 asttokens = [
     {file = "asttokens-2.0.5-py2.py3-none-any.whl", hash = "sha256:0844691e88552595a6f4a4281a9f7f79b8dd45ca4ccea82e5e05b4bbdb76705c"},
     {file = "asttokens-2.0.5.tar.gz", hash = "sha256:9a54c114f02c7a9480d56550932546a3f1fe71d8a02f1bc7ccd0ee3ee35cf4d5"},
+]
+async-timeout = [
+    {file = "async-timeout-4.0.1.tar.gz", hash = "sha256:b930cb161a39042f9222f6efb7301399c87eeab394727ec5437924a36d6eef51"},
+    {file = "async_timeout-4.0.1-py3-none-any.whl", hash = "sha256:a22c0b311af23337eb05fcf05a8b51c3ea53729d46fb5460af62bee033cec690"},
 ]
 atomicwrites = [
     {file = "atomicwrites-1.4.0-py2.py3-none-any.whl", hash = "sha256:6d1784dea7c0c8d4a5172b6c620f40b6e4cbfdf96d783691f2e1302a7b88e197"},
