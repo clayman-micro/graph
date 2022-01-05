@@ -46,12 +46,5 @@ def run(ctx, host, port):
         address = get_address()
 
     uvicorn.run(
-        "graph:init",
-        host=address,
-        port=port,
-        access_log=False,
-        log_level="info",
-        log_config=None,
-        loop="uvloop",
-        factory=True,
+        "graph:app", host=address, port=port, access_log=False, log_level="info", log_config=None, loop="uvloop",
     )

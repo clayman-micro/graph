@@ -3,10 +3,12 @@ import aiojobs
 import structlog
 from fastapi import FastAPI
 from starlette_prometheus import PrometheusMiddleware, metrics
+from strawberry.fastapi import GraphQLRouter
 
 from graph.events import event_consumer
 from graph.logging import LoggingMiddleware
 from graph.settings import settings
+from graph.web.schema import schema
 
 
 def setup_rabbitmq(app: FastAPI) -> None:
@@ -66,5 +68,8 @@ def init() -> FastAPI:
     # Configure logging
     app.logger = structlog.get_logger("graph")  # type: ignore
     app.add_middleware(LoggingMiddleware)
+
+    graphql_app = GraphQLRouter(schema)
+    app.include_router(graphql_app, prefix="/graphql")
 
     return app
