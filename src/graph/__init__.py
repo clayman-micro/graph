@@ -7,7 +7,6 @@ from strawberry.fastapi import GraphQLRouter
 
 from graph.events import event_consumer
 from graph.logging import LoggingMiddleware
-from graph.settings import settings
 from graph.web.schema import schema
 
 
@@ -50,7 +49,7 @@ def setup_scheduler(app: FastAPI) -> None:
         await app.state.scheduler.close()
 
 
-def init() -> FastAPI:
+def init(settings) -> FastAPI:
     """Initialize application."""
     app = FastAPI()
     app.state.settings = settings

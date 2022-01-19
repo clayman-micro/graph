@@ -1,7 +1,7 @@
 import socket
 
 import click
-import uvicorn  # type: ignore
+from aiohttp import web
 
 
 def get_address(default: str = "127.0.0.1") -> str:
@@ -45,6 +45,6 @@ def run(ctx, host, port):
     else:
         address = get_address()
 
-    uvicorn.run(
-        "graph:app", host=address, port=port, access_log=False, log_level="info", log_config=None, loop="uvloop",
-    )
+    app = ctx.obj["app"]
+
+    web.run_app(app, host=address, port=port)

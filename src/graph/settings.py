@@ -12,6 +12,3 @@ class Settings(BaseSettings):
     debug: bool = False
     rabbitmq_dsn: RabbitMQDSN = Field(default="amqp://rabbit:rabbit@localhost:5672/")
     sentry_dsn: Optional[AnyUrl] = None
-
-
-settings = Settings()
